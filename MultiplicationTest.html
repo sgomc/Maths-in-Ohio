@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv = "X-UA-Compatible" contents="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Hackaton</title> 
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <body>
+        <header class="header">
+            <a href="Main.html" class="logo">MATHS IN OHIO</a>
+            <nav class="navbar">
+                <a href="Main.html">Home</a>
+                <a href="Addition.html" >ADDITION</a>
+                <a href="Subtraction.html" >SUBTRACTION</a>
+                <a href="Multiplication.html" class="active">MULTIPLICATION</a>
+                <a href="Division.html">DIVISION</a>
+                <a href="OnlyInOhio.html">OHIOS FINAL BOSS</a>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="inv-content">
+                <h1>Skibidi test: Multiplication</h1>
+                <h3>Sigmas Aura is OVER 9000!</h3>
+                <br>
+                <p>
+                    <div class="container">
+                        
+                        
+                        <p>Solve: <span id="num1"></span> x <span id="num2"></span> = ?</p><br>
+                        <input type="number" id="answer" placeholder="Enter your answer" />
+                        <button id="checkBtn">Are we cooking?</button>
+                        <p class="feedback" id="feedback"></p>
+                        
+                        <br>
+                    </div>
+                    <script>
+                        
+                        let num1 = Math.floor(Math.random() * 10) + 1;
+                        let num2 = Math.floor(Math.random() * 10) + 1;
+                        let expectedResult = num1 * num2;
+                        let counter = 0;
+                       
+                        document.getElementById('num1').textContent = num1;
+                        document.getElementById('num2').textContent = num2;
+                    
+                        
+                        document.getElementById('checkBtn').addEventListener('click', function() {
+                            
+                            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+                           
+                            if (userAnswer === expectedResult) {
+                                counter++;
+                                if(counter == 1)
+                                {
+                                    document.getElementById('feedback').textContent = 'Now we cookin!';
+                                }
+                                else
+                                { 
+                                    document.getElementById('feedback').textContent = counter +' times and still cooking so Sigma!';
+                                }
+                                document.getElementById('feedback').style.color = 'green';
+                                
+                            } else {
+                                if(counter === 0)
+                                {
+                                    document.getElementById('feedback').textContent = 'you\'ve gyatt to lock in bruh!';
+                                }
+                                else
+                                { 
+                                    document.getElementById('feedback').textContent = 'Rip streak of '+ (counter) + '\n o7 omega lule';
+                                }
+                                document.getElementById('feedback').style.color = 'red';
+                                counter = 0;
+                            }
+                            num1 = Math.floor(Math.random() * 10) + 1;
+                            num2 = Math.floor(Math.random() * 10) + 1;
+                            expectedResult = num1 * num2;
+                            document.getElementById('num1').textContent = num1;
+                            document.getElementById('num2').textContent = num2;
+                            
+                        });
+                    </script>
+                </p>
+            </div>
+            
+        </section>
+    </body>

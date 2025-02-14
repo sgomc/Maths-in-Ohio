@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv = "X-UA-Compatible" contents="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Hackaton</title> 
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <body>
+        <header class="header">
+            <a href="Main.html" class="logo">MATHS IN OHIO</a>
+            <nav class="navbar">
+                <a href="Main.html">Home</a>
+                <a href="Addition.html" >ADDITION</a>
+                <a href="Subtraction.html" >SUBTRACTION</a>
+                <a href="Multiplication.html">MULTIPLICATION</a>
+                <a href="Division.html" >DIVISION</a>
+                <a href="OnlyInOhio.html" class="active">OHIOS FINAL BOSS</a>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="inv-content">
+                <h1>Only in Ohio</h1>
+                <h3>Only in Ohio test:</h3>
+                <br>
+                <p>
+                    <div class="container">
+                        
+                        
+                        
+                        <p>🚨 A cornfield in Ohio grows at a rate of 5 feet per hour due to mysterious radioactive cow energy. 🌽🐄 Meanwhile, Florida Man is traveling north at 420 mph on a stolen NASA rocket-powered lawnmower. 🏎️💨</p>
+                        <p>If the Ohio Final Boss spawns exactly 69 miles away and starts throwing triangular Buckeye projectiles at a velocity of π√e mph, at what time will Florida Man be legally required to file his taxes? 📝💀</p>
+                        <br>
+                        <br>   
+                        <div class = "BossImg"></div>
+                        <br>
+                        <br>
+                        <input type="number" id="answer" placeholder="Enter answer in seconds" />
+                        <button id="checkBtn">Are we cooking?</button>
+                        <p class="feedback" id="feedback"></p>
+                        
+                        <br>
+                        
+                    </div>
+                    <script>
+    
+                        let expectedResult = 69420;
+                        let counter = 0;
+
+
+                        document.getElementById('checkBtn').addEventListener('click', function() {
+                           
+                            const userAnswer = parseInt(document.getElementById('answer').value, 10);
+                            
+                            if (userAnswer === expectedResult) {
+                                counter++;
+                                if(counter == 1)
+                                {
+                                    document.getElementById('feedback').textContent = 'Bonus: How many corn dogs will remain untouched at the Ohio State Fair? 🌭💀';
+                                }
+                                else if(counter >= 2)
+                                { 
+                                    document.getElementById('feedback').textContent = 'Good job on completing the Only in Ohio test';
+                                }
+                                expectedResult = 42069;
+                                document.getElementById('feedback').style.color = 'green';
+                                
+                            } else if(counter < 2 && !(userAnswer === expectedResult)) {
+                                if(counter === 0)
+                                {
+                                    document.getElementById('feedback').textContent = 'you\'ve gyatt to lock in bruh!';
+                                }
+                                else
+                                { 
+                                    document.getElementById('feedback').textContent = 'Rip streak of '+ (counter) + '\n o7 omega lule\n Bonus: How many corn dogs will remain untouched at the Ohio State Fair? 🌭💀';
+                                    
+                                }
+                                document.getElementById('feedback').style.color = 'red';
+                            }
+                            
+                            
+                        });
+                    </script>
+                </p>
+                
+            </div>
+            
+        </section>
+    </body>
+</html>

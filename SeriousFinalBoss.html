@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv = "X-UA-Compatible" contents="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Hackaton</title> 
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <body>
+        <header class="header">
+            <a href="Main.html" class="logo">MATHS IN OHIO</a>
+            <nav class="navbar">
+                <a href="Main.html">Home</a>
+                <a href="Addition.html" >ADDITION</a>
+                <a href="Subtraction.html" >SUBTRACTION</a>
+                <a href="Multiplication.html">MULTIPLICATION</a>
+                <a href="Division.html" >DIVISION</a>
+                <a href="OnlyInOhio.html"class="active">OHIOS FINAL BOSS</a>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="inv-content">
+                <h1>Locked in Test</h1>
+                <h3>Skibidilization</h3>
+                <div class="inv-intro">
+                    <hr>
+                    <p>
+                        <div class="container">
+                            
+                            <p>
+                                Solve: ((<span class="var" id="num1">num1</span> * 
+                                (<span class="var" id="num2">num2</span> + 
+                                  (<span class="var" id="num3">num3</span> / 
+                                    (<span class="var" id="num4">num4</span> - 
+                                      (<span class="var" id="num5">num5</span> / 
+                                        (<span class="var" id="num6">num6</span> + <span class="var" id="num1_2">num1</span>)
+                                      )
+                                    )
+                                  )
+                                )) - 
+                                ((<span class="var" id="num2_2">num2</span> * <span class="var" id="num3_2">num3</span>) / 
+                                  (<span class="var" id="num1_3">num1</span> + <span class="var" id="num4_2">num4</span>)
+                                )) / 
+                                ((<span class="var" id="num5_2">num5</span> - 
+                                  (<span class="var" id="num6_2">num6</span> / 
+                                    (<span class="var" id="num3_3">num3</span> + <span class="var" id="num2_3">num2</span>)
+                                  )
+                                ) + 
+                                (<span class="var" id="num1_4">num1</span> / 
+                                  (<span class="var" id="num4_3">num4</span> - <span class="var" id="num5_3">num5</span>)
+                                ))
+                                = ? (Round to 3 decimal places)
+                              </p>
+                              <br>
+                              <input type="number" id="answer" placeholder="Enter answer" />
+                              <button id="checkBtn">Are we cooking?</button>
+                              <p class="feedback" id="feedback"></p>
+                              <br>
+                              
+                              <script>
+
+                                let num1 = Math.floor(Math.random() * 10) + 1;
+                                let num2 = Math.floor(Math.random() * 10) + 1;
+                                let num3 = Math.floor(Math.random() * 10) + 1;
+                                let num4 = Math.floor(Math.random() * 10) + 1;
+                                let num5 = Math.floor(Math.random() * 10) + 1;
+                                let num6 = Math.floor(Math.random() * 10) + 1;
+                                let counter = 0;
+                                
+                                let value = ((num1 * (num2 + (num3 / (num4 - (num5 / (num6 + num1)))))) - ((num2 * num3) / (num1 + num4))) / ((num5 - (num6 / (num3 + num2))) + (num1 / (num4 - num5)));
+
+                                let expectedResult = Math.round(value * 1000) / 1000;
+                              
+
+                                document.getElementById('num1').textContent = num1;
+                                document.getElementById('num2').textContent = num2;
+                                document.getElementById('num3').textContent = num3;
+                                document.getElementById('num4').textContent = num4;
+                                document.getElementById('num5').textContent = num5;
+                                document.getElementById('num6').textContent = num6;
+
+                                document.getElementById('num1_2').textContent = num1;
+                                document.getElementById('num1_3').textContent = num1;
+                                document.getElementById('num2_2').textContent = num2;
+                                document.getElementById('num3_2').textContent = num3;
+                                document.getElementById('num4_2').textContent = num4;
+                                document.getElementById('num5_2').textContent = num5;
+                                document.getElementById('num6_2').textContent = num6;
+                                document.getElementById('num3_3').textContent = num3;
+                                document.getElementById('num2_3').textContent = num2;
+                                document.getElementById('num1_4').textContent = num1;
+                                document.getElementById('num4_3').textContent = num4;
+                                document.getElementById('num5_3').textContent = num5;
+                              
+                        
+                            document.getElementById('checkBtn').addEventListener('click', function() {
+                                const userAnswer = document.getElementById('answer').value;
+                                   
+
+                                if (userAnswer === ''+expectedResult) {
+                                    counter++;
+                                    if(counter == 1)
+                                    {
+                                        document.getElementById('feedback').textContent = 'Now we cookin!';
+                                    }
+                                    else
+                                    { 
+                                        document.getElementById('feedback').textContent = counter +' times and still cooking so Sigma!';
+                                    }
+                                    document.getElementById('feedback').style.color = 'green';
+                                    
+                                } else {
+                                    if(counter === 0)
+                                    {
+                                        document.getElementById('feedback').textContent = 'you\'ve gyatt to lock in bruh!';
+                                    }
+                                    else
+                                    { 
+                                        document.getElementById('feedback').textContent = 'Rip streak of '+ (counter) + '\n o7 omega lule';
+                                    }
+                                    document.getElementById('feedback').style.color = 'red';
+                                    counter = 0;
+                                }
+                                num1 = Math.floor(Math.random() * 10) + 1;
+                                num2 = Math.floor(Math.random() * 10) + 1;
+                                num3 = Math.floor(Math.random() * 10) + 1;
+                                num4 = Math.floor(Math.random() * 10) + 1;
+                                num5 = Math.floor(Math.random() * 10) + 1;
+                                num6 = Math.floor(Math.random() * 10) + 1;
+                              
+                               
+                                value = ((num1 * (num2 + (num3 / (num4 - (num5 / (num6 + num1)))))) - ((num2 * num3) / (num1 + num4))) / ((num5 - (num6 / (num3 + num2))) + (num1 / (num4 - num5)));
+ 
+                                expectedResult = Math.round(value * 1000) / 1000;
+                              
+
+                                document.getElementById('num1').textContent = num1;
+                                document.getElementById('num2').textContent = num2;
+                                document.getElementById('num3').textContent = num3;
+                                document.getElementById('num4').textContent = num4;
+                                document.getElementById('num5').textContent = num5;
+                                document.getElementById('num6').textContent = num6;
+
+                                document.getElementById('num1_2').textContent = num1;
+                                document.getElementById('num1_3').textContent = num1;
+                                document.getElementById('num2_2').textContent = num2;
+                                document.getElementById('num3_2').textContent = num3;
+                                document.getElementById('num4_2').textContent = num4;
+                                document.getElementById('num5_2').textContent = num5;
+                                document.getElementById('num6_2').textContent = num6;
+                                document.getElementById('num3_3').textContent = num3;
+                                document.getElementById('num2_3').textContent = num2;
+                                document.getElementById('num1_4').textContent = num1;
+                                document.getElementById('num4_3').textContent = num4;
+                                document.getElementById('num5_3').textContent = num5;
+                                
+                            });
+                        </script>
+                    </p>
+                </div>
+            </div>
+            
+        </section>
+    </body>
+</html>
