@@ -31,8 +31,8 @@
                         
                         
                         
-                        <p>🚨 A cornfield in Ohio grows at a rate of 5 feet per hour due to mysterious radioactive cow energy. 🌽🐄 Meanwhile, Florida Man is traveling north at 420 mph on a stolen NASA rocket-powered lawnmower. 🏎️💨</p>
-                        <p>If the Ohio Final Boss spawns exactly 69 miles away and starts throwing triangular Buckeye projectiles at a velocity of π√e mph, at what time will Florida Man be legally required to file his taxes? 📝💀</p>
+                        <p>🚨 A cornfield in Ohio grows at a rate of 5 feet per hour due to mysterious radioactive cow energy.</p><br><p> 🌽🐄 Meanwhile, Florida Man is traveling north at 420 mph on a stolen NASA rocket-powered lawnmower. 🏎️💨</p><br>
+                        <p>If the Ohio Final Boss spawns exactly 69 miles away and starts throwing triangular Buckeye projectiles at a velocity of π√e mph,</p><br><p> at what time will Florida Man be legally required to file his taxes? 📝💀</p>
                         <br>
                         <br>   
                         <div class = "BossImg"></div>
@@ -41,6 +41,7 @@
                         <input type="number" id="answer" placeholder="Enter answer in seconds" />
                         <button id="checkBtn">Are we cooking?</button>
                         <p class="feedback" id="feedback"></p>
+                        <p class="feedback" id="Bonus"></p>
                         
                         <br>
                         
@@ -59,11 +60,14 @@
                                 counter++;
                                 if(counter == 1)
                                 {
-                                    document.getElementById('feedback').textContent = 'Bonus: How many corn dogs will remain untouched at the Ohio State Fair? 🌭💀';
+                                    document.getElementById('feedback').textContent = '🤫🧏‍♂️ But the SECOND QUESTION JUST HIT hehe';
+                                    document.getElementById('Bonus').textContent = 'Bonus: How many corn dogs will remain untouched at the Ohio State Fair? 🌭💀';
+                                    document.getElementById('feedback').style.color = 'white';
                                 }
                                 else if(counter >= 2)
                                 { 
                                     document.getElementById('feedback').textContent = 'Good job on completing the Only in Ohio test';
+                                    document.getElementById('Bonus').textContent = '👨➡💀';
                                 }
                                 expectedResult = 42069;
                                 document.getElementById('feedback').style.color = 'green';
@@ -71,14 +75,15 @@
                             } else if(counter < 2 && !(userAnswer === expectedResult)) {
                                 if(counter === 0)
                                 {
-                                    document.getElementById('feedback').textContent = 'you\'ve gyatt to lock in bruh!';
+                                    document.getElementById('feedback').textContent = 'THAT\'S NOT OHIO ENOUGH';
                                 }
                                 else
                                 { 
-                                    document.getElementById('feedback').textContent = 'Rip streak of '+ (counter) + '\n o7 omega lule\n Bonus: How many corn dogs will remain untouched at the Ohio State Fair? 🌭💀';
+                                    document.getElementById('feedback').textContent = 'Rip streak of '+ (counter) + '\n o7 omega lule';
                                     
                                 }
                                 document.getElementById('feedback').style.color = 'red';
+                                
                             }
                             
                             

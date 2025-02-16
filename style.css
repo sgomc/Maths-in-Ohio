@@ -21,7 +21,7 @@ html::before {
     right:0;
     width: 100%;
     height: 100%;
-    background: #191c2c;
+    background: #131418;
     animation: showRight 1s ease forwards;
     animation-delay:.4s;
     z-index: 200;
@@ -110,6 +110,8 @@ html::before {
     background: url('GL.png') no-repeat;
     background-size:1200px;
     background-position: center;
+    border-radius: 20px;
+    border-color: #081b29;
     align-items: center;
 
 }
@@ -328,10 +330,10 @@ button:hover {
     }
 }
 .BossImg {
-    height: 200px;
+    height: 150px;
     display: flex;
     background: url('Ohio_Final_boss.webp') no-repeat;
-    background-size:400px;
+    background-size:350px;
     background-position: left;
     align-items: center;
 }
